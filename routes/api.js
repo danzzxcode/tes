@@ -112,6 +112,8 @@ res.json({ result })})})
  
 //ASUPAN
 router.get('/asupan/santuy', async (req, res, next) => {  
+var apikeyInput = req.query.apikey
+if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
 var apikey = req.query.apikey
 if(!apikey) return res.json(loghandler.apikey)
 fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/santuy.json`))
@@ -121,6 +123,8 @@ var result = data[Math.floor(Math.random() * data.length)];
 res.json({ result })})})
 
 router.get('/asupan/bocil', async (req, res, next) => {  
+var apikeyInput = req.query.apikey
+if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
 var apikey = req.query.apikey
 if(!apikey) return res.json(loghandler.apikey)
 fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/bocil.json`))
@@ -130,6 +134,8 @@ var result = data[Math.floor(Math.random() * data.length)];
 res.json({ result })})})
 
 router.get('/asupan/ukhty', async (req, res, next) => {  
+var apikeyInput = req.query.apikey
+if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
 var apikey = req.query.apikey
 if(!apikey) return res.json(loghandler.apikey)
 fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/ukhty.json`))
@@ -139,6 +145,8 @@ var result = data[Math.floor(Math.random() * data.length)];
 res.json({ result })})})
 
 router.get('/asupan/geayubi', async (req, res, next) => {  
+var apikeyInput = req.query.apikey
+if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
 var apikey = req.query.apikey
 if(!apikey) return res.json(loghandler.apikey)
 fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/geayubi.json`))
@@ -148,6 +156,8 @@ var result = data[Math.floor(Math.random() * data.length)];
 res.json({ result })})})
 
 router.get('/asupan/rikagusriani', async (req, res, next) => {  
+var apikeyInput = req.query.apikey
+if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
 var apikey = req.query.apikey
 if(!apikey) return res.json(loghandler.apikey)
 fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/asupan/rikagusriani.json`))
