@@ -14,7 +14,6 @@ app.use(secure)
 app.use(express.static("public"))
 
 app.use('/', mainrouter)
-app.use('/login', login)
 app.use('/docs', apirouter)
 
 app.listen(PORT, () => {
