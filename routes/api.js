@@ -111,12 +111,12 @@ res.json({ result })})})
  
 //ASUPAN
 router.get('/asupan/santuy', async (req, res, next) => {  
-var apikeyInput = req.query.apikey
-apikey = req.query.url
-if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
+var apikey = req.query.apikey
+if(!apikey) return res.json(loghandler.apikey)
 fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/santuy.json`))
 .then(response => response.json())
-.then(data => { var result = data;
+.then(data => {
+var result = data[Math.floor(Math.random() * data.length)];
 res.json({ result })})})
 
 //CECAN
