@@ -74,8 +74,8 @@ fetch(encodeURI(`https://ramdani-api.herokuapp.com/api/dowloader/igdowloader?url
 res.json({ result })})})
 
 router.get('/download/igstory', async (req, res, next) => {  
-var apikeyInput = req.query.apikey
 username = req.query.username
+var apikeyInput = req.query.apikey
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
 fetch(encodeURI(`https://ramdani-api.herokuapp.com/api/dowloader/igstory?username=${username}`))
 .then(response => response.json())
@@ -230,8 +230,8 @@ res.json({ result })})})
 
 //STALK
 router.get('/stalk/github', async (req, res, next) => {  
-var apikeyInput = req.query.apikey
 username = req.query.username
+var apikeyInput = req.query.apikey
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
 fetch(encodeURI(`https://ramdani-api.herokuapp.com/api/info/githubstalk?user=${username}`))
 .then(response => response.json())
