@@ -14,9 +14,6 @@ var request = require('request');
 var router  = express.Router();
 nottext: {message: 'MASUKKAN TEXT' }
 notapikey: {message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' }
-} catch (e) {
-	console.log('WELCOME TO MY REST API')
-}
 
 loghandler = {
     error: {
