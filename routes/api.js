@@ -6,6 +6,7 @@ var express = require('express');
 apikey = "danzz"
 creator = "DanzzCoding"
 
+const listkey = ["danzz","Ramdani"];
 
 var fetch = require('node-fetch');
 var cheerio = require('cheerio');
