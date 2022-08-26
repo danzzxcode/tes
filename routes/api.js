@@ -110,106 +110,15 @@ fetch(encodeURI(`https://ramdani-api.herokuapp.com/api/dowloader/soundcloud?url=
 res.json({ result })})})
  
 //ASUPAN
-router.get('/asupan/santuy', async (req, res, next) => {
-          var apikey = req.query.apikey
-       	if(!apikey) return res.json(loghandler.apikey)        
-       fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/santuy.json`))
-        .then(response => response.json())
-        .then(async data => {
-        var result = data[Math.floor(Math.random() * data.length)];
-        var buffer = result.url;
-          data = await fetch(buffer).then(v => v.buffer())
-         await fs.writeFileSync(__path +'/chika.mp4', data)
-        res.sendFile(__path+'/chika.mp4')
-         })
-         .catch(e => {
-         	console.log(e);
-         	res.json(loghandler.error)
-})
-} else {
-  res.json(loghandler.apikey)
-}
-})
-router.get('/asupan/ukhty', async (req, res, next) => {
-          var apikey = req.query.apikey
-       	if(!apikey) return res.json(loghandler.apikey)        
-       fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/ukhty.json`))
-        .then(response => response.json())
-        .then(async data => {
-        var result = data[Math.floor(Math.random() * data.length)];
-        var buffer = result.url;
-          data = await fetch(buffer).then(v => v.buffer())
-         await fs.writeFileSync(__path +'/chika.mp4', data)
-        res.sendFile(__path+'/chika.mp4')
-         })
-         .catch(e => {
-         	console.log(e);
-         	res.json(loghandler.error)
-})
-} else {
-  res.json(loghandler.apikey)
-}
-})
-router.get('/asupan/bocil', async (req, res, next) => {
-          var apikey = req.query.apikey
-       	if(!apikey) return res.json(loghandler.apikey)        
-       fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/bocil.json`))
-        .then(response => response.json())
-        .then(async data => {
-        var result = data[Math.floor(Math.random() * data.length)];
-        var buffer = result.url;
-          data = await fetch(buffer).then(v => v.buffer())
-         await fs.writeFileSync(__path +'/chika.mp4', data)
-        res.sendFile(__path+'/chika.mp4')
-         })
-         .catch(e => {
-         	console.log(e);
-         	res.json(loghandler.error)
-})
-} else {
-  res.json(loghandler.apikey)
-}
-})
-router.get('/asupan/geayubi', async (req, res, next) => {
-          var apikey = req.query.apikey
-       	if(!apikey) return res.json(loghandler.apikey)
-       fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/geayubi.json`))
-        .then(response => response.json())
-        .then(async data => {
-        var result = data[Math.floor(Math.random() * data.length)];
-        var buffer = result.url;
-          data = await fetch(buffer).then(v => v.buffer())
-         await fs.writeFileSync(__path +'/chika.mp4', data)
-        res.sendFile(__path+'/chika.mp4')
-         })
-         .catch(e => {
-         	console.log(e);
-         	res.json(loghandler.error)
-})
-} else {
-  res.json(loghandler.apikey)
-}
-})
-router.get('/asupan/rikagusriani', async (req, res, next) => {
-          var apikey = req.query.apikey
-       	if(!apikey) return res.json(loghandler.apikey)
-       fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/asupan/rikagusriani.json`))
-        .then(response => response.json())
-        .then(async data => {
-        var result = data[Math.floor(Math.random() * data.length)];
-        var buffer = result.url;
-          data = await fetch(buffer).then(v => v.buffer())
-         await fs.writeFileSync(__path +'/chika.mp4', data)
-        res.sendFile(__path+'/chika.mp4')
-         })
-         .catch(e => {
-         	console.log(e);
-         	res.json(loghandler.error)
-})
-} else {
-  res.json(loghandler.apikey)
-}
-})
+router.get('/asupan/santuy', async (req, res, next) => {  
+var apikeyInput = req.query.apikey
+apikey = req.query.url
+if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
+fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/santuy.json`))
+.then(response => response.json())
+.then(data => { var result = data;
+res.json({ result })})})
+
 //CECAN
 router.get('/cecan/indonesia', async (req, res, next) => {  
 var apikeyInput = req.query.apikey
