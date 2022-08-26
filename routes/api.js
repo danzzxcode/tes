@@ -75,7 +75,7 @@ res.json({ result })})})
 
 router.get('/download/igstory', async (req, res, next) => {  
 var apikeyInput = req.query.apikey
-username = req.query.text
+username = req.query.username
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
 fetch(encodeURI(`https://ramdani-api.herokuapp.com/api/dowloader/igstory?username=${username}`))
 .then(response => response.json())
@@ -119,13 +119,59 @@ fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/san
 var result = data[Math.floor(Math.random() * data.length)];
 res.json({ result })})})
 
+router.get('/asupan/bocil', async (req, res, next) => {  
+var apikey = req.query.apikey
+if(!apikey) return res.json(loghandler.apikey)
+fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/bocil.json`))
+.then(response => response.json())
+.then(data => {
+var result = data[Math.floor(Math.random() * data.length)];
+res.json({ result })})})
+
+router.get('/asupan/ukhty', async (req, res, next) => {  
+var apikey = req.query.apikey
+if(!apikey) return res.json(loghandler.apikey)
+fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/ukhty.json`))
+.then(response => response.json())
+.then(data => {
+var result = data[Math.floor(Math.random() * data.length)];
+res.json({ result })})})
+
+router.get('/asupan/geayubi', async (req, res, next) => {  
+var apikey = req.query.apikey
+if(!apikey) return res.json(loghandler.apikey)
+fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/geayubi.json`))
+.then(response => response.json())
+.then(data => {
+var result = data[Math.floor(Math.random() * data.length)];
+res.json({ result })})})
+
+router.get('/asupan/rikagusriani', async (req, res, next) => {  
+var apikey = req.query.apikey
+if(!apikey) return res.json(loghandler.apikey)
+fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/asupan/rikagusriani.json`))
+.then(response => response.json())
+.then(data => {
+var result = data[Math.floor(Math.random() * data.length)];
+res.json({ result })})})
+
 //CECAN
+router.get('/cecan/random', async (req, res, next) => {  
+var apikeyInput = req.query.apikey
+if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
+fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/cecan.json`))
+.then(response => response.json())
+.then(data => {
+var result = data[Math.floor(Math.random() * data.length)];
+res.json({ result })})})
+
 router.get('/cecan/indonesia', async (req, res, next) => {  
 var apikeyInput = req.query.apikey
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
 fetch(encodeURI(`https://api-alphabot.herokuapp.com/api/cecan/indonesia`))
 .then(response => response.json())
-.then(data => { var result = data;
+.then(data => {
+var result = data[Math.floor(Math.random() * data.length)];
 res.json({ result })})})
 
 router.get('/cecan/jepang', async (req, res, next) => {  
@@ -133,7 +179,8 @@ var apikeyInput = req.query.apikey
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
 fetch(encodeURI(`https://api-alphabot.herokuapp.com/api/cecan/japan`))
 .then(response => response.json())
-.then(data => { var result = data;
+.then(data => {
+var result = data[Math.floor(Math.random() * data.length)];
 res.json({ result })})})
 
 router.get('/cecan/korea', async (req, res, next) => {  
@@ -141,7 +188,8 @@ var apikeyInput = req.query.apikey
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
 fetch(encodeURI(`https://api-alphabot.herokuapp.com/api/cecan/korea`))
 .then(response => response.json())
-.then(data => { var result = data;
+.then(data => { {
+var result = data[Math.floor(Math.random() * data.length)];
 res.json({ result })})})
 
 router.get('/cecan/vietnam', async (req, res, next) => {  
@@ -149,7 +197,8 @@ var apikeyInput = req.query.apikey
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
 fetch(encodeURI(`https://api-alphabot.herokuapp.com/api/cecan/vietnam`))
 .then(response => response.json())
-.then(data => { var result = data;
+.then(data => { {
+var result = data[Math.floor(Math.random() * data.length)];
 res.json({ result })})})
 
 router.get('/cecan/thailand', async (req, res, next) => {  
@@ -157,7 +206,8 @@ var apikeyInput = req.query.apikey
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
 fetch(encodeURI(`https://api-alphabot.herokuapp.com/api/cecan/thailand`))
 .then(response => response.json())
-.then(data => { var result = data;
+.then(data => { {
+var result = data[Math.floor(Math.random() * data.length)];
 res.json({ result })})})
 
 router.get('/cecan/china', async (req, res, next) => {  
@@ -165,7 +215,8 @@ var apikeyInput = req.query.apikey
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
 fetch(encodeURI(`https://api-alphabot.herokuapp.com/api/cecan/china`))
 .then(response => response.json())
-.then(data => { var result = data;
+.then(data => { {
+var result = data[Math.floor(Math.random() * data.length)];
 res.json({ result })})})
 
 //CONVERT
@@ -180,8 +231,9 @@ res.json({ result })})})
 //STALK
 router.get('/stalk/github', async (req, res, next) => {  
 var apikeyInput = req.query.apikey
+username = req.query.username
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-fetch(encodeURI(`https://api-alphabot.herokuapp.com/api/stalk/github`))
+fetch(encodeURI(`https://ramdani-api.herokuapp.com/api/info/githubstalk?user=${username}`))
 .then(response => response.json())
 .then(data => { var result = data;
 res.json({ result })})})
