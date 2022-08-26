@@ -783,7 +783,8 @@ var apikeyInput = req.query.apikey
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
 fetch(encodeURI(`https://api-yogipw.herokuapp.com/api/nsfw/ass`))
 .then(response => response.json())
-.then(data => { var result = data;
+.then(data => { 
+var result = data[Math.floor(Math.random() * data.length)];
 res.json({ result })})})
 
 router.get('/nsfw/ahegao', async (req, res, next) => {  
@@ -791,7 +792,8 @@ var apikeyInput = req.query.apikey
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
 fetch(encodeURI(`https://api-yogipw.herokuapp.com/api/nsfw/ahegao`))
 .then(response => response.json())
-.then(data => { var result = data;
+.then(data => {  
+var result = data[Math.floor(Math.random() * data.length)];
 res.json({ result })})})
 
 router.get('/nsfw/bdsm', async (req, res, next) => {  
@@ -799,7 +801,8 @@ var apikeyInput = req.query.apikey
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
 fetch(encodeURI(`https://api-yogipw.herokuapp.com/api/nsfw/bdsm`))
 .then(response => response.json())
-.then(data => { var result = data;
+.then(data => {  
+var result = data[Math.floor(Math.random() * data.length)];
 res.json({ result })})})
 
 router.get('/nsfw/blowjob', async (req, res, next) => {  
@@ -807,7 +810,8 @@ var apikeyInput = req.query.apikey
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
 fetch(encodeURI(`https://api-yogipw.herokuapp.com/api/nsfw/blowjob`))
 .then(response => response.json())
-.then(data => { var result = data;
+.then(data => {  
+var result = data[Math.floor(Math.random() * data.length)];
 res.json({ result })})})
 
 router.get('/nsfw/cukold', async (req, res, next) => {  
@@ -815,7 +819,8 @@ var apikeyInput = req.query.apikey
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
 fetch(encodeURI(`https://api-yogipw.herokuapp.com/api/nsfw/cukold`))
 .then(response => response.json())
-.then(data => { var result = data;
+.then(data => {  
+var result = data[Math.floor(Math.random() * data.length)];
 res.json({ result })})})
 
 router.get('/nsfw/cum', async (req, res, next) => {  
@@ -823,7 +828,8 @@ var apikeyInput = req.query.apikey
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
 fetch(encodeURI(`https://api-yogipw.herokuapp.com/api/nsfw/cum`))
 .then(response => response.json())
-.then(data => { var result = data;
+.then(data => {  
+var result = data[Math.floor(Math.random() * data.length)];
 res.json({ result })})})
 
 router.get('/nsfw/ero', async (req, res, next) => {  
@@ -831,7 +837,8 @@ var apikeyInput = req.query.apikey
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
 fetch(encodeURI(`https://api-yogipw.herokuapp.com/api/nsfw/ero`))
 .then(response => response.json())
-.then(data => { var result = data;
+.then(data => {  
+var result = data[Math.floor(Math.random() * data.length)];
 res.json({ result })})})
 
 // CANVAS 
