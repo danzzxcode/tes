@@ -112,8 +112,7 @@ res.json({ result })})})
 //ASUPAN
 router.get('/asupan/santuy', async (req, res, next) => {
           var apikey = req.query.apikey
-       	if(!apikey) return res.json(loghandler.apikey)
-        if(listkey.includes(apikey)){
+       	if(!apikey) return res.json(loghandler.apikey)        
        fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/santuy.json`))
         .then(response => response.json())
         .then(async data => {
@@ -133,8 +132,7 @@ router.get('/asupan/santuy', async (req, res, next) => {
 })
 router.get('/asupan/ukhty', async (req, res, next) => {
           var apikey = req.query.apikey
-       	if(!apikey) return res.json(loghandler.apikey)
-        if(listkey.includes(apikey)){
+       	if(!apikey) return res.json(loghandler.apikey)        
        fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/ukhty.json`))
         .then(response => response.json())
         .then(async data => {
@@ -154,8 +152,7 @@ router.get('/asupan/ukhty', async (req, res, next) => {
 })
 router.get('/asupan/bocil', async (req, res, next) => {
           var apikey = req.query.apikey
-       	if(!apikey) return res.json(loghandler.apikey)
-        if(listkey.includes(apikey)){
+       	if(!apikey) return res.json(loghandler.apikey)        
        fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/bocil.json`))
         .then(response => response.json())
         .then(async data => {
@@ -176,7 +173,6 @@ router.get('/asupan/bocil', async (req, res, next) => {
 router.get('/asupan/geayubi', async (req, res, next) => {
           var apikey = req.query.apikey
        	if(!apikey) return res.json(loghandler.apikey)
-        if(listkey.includes(apikey)){
        fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/geayubi.json`))
         .then(response => response.json())
         .then(async data => {
@@ -197,7 +193,6 @@ router.get('/asupan/geayubi', async (req, res, next) => {
 router.get('/asupan/rikagusriani', async (req, res, next) => {
           var apikey = req.query.apikey
        	if(!apikey) return res.json(loghandler.apikey)
-        if(listkey.includes(apikey)){
        fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/asupan/rikagusriani.json`))
         .then(response => response.json())
         .then(async data => {
