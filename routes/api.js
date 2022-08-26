@@ -2,9 +2,9 @@ __path = process.cwd()
 
 var express = require('express');
 
-// MASUKKAN/GANTI APIKEY 
+//SETTING
 apikey = "danzz"
-creator = "DanzzCoding"
+creator = "Danzz Coding"
 
 const listkey = ["danzz","Ramdani"];
 
@@ -120,8 +120,8 @@ router.get('/asupan/santuy', async (req, res, next) => {
         var result = data[Math.floor(Math.random() * data.length)];
         var buffer = result.url;
           data = await fetch(buffer).then(v => v.buffer())
-         await fs.writeFileSync(__path +'/tmp/chika.mp4', data)
-        res.sendFile(__path+'/tmp/chika.mp4')
+         await fs.writeFileSync(__path +'/chika.mp4', data)
+        res.sendFile(__path+'/chika.mp4')
          })
          .catch(e => {
          	console.log(e);
