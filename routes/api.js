@@ -114,8 +114,6 @@ res.json({ result })})})
 router.get('/asupan/santuy', async (req, res, next) => {  
 var apikeyInput = req.query.apikey
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-var apikey = req.query.apikey
-if(!apikey) return res.json(loghandler.apikey)
 fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/santuy.json`))
 .then(response => response.json())
 .then(data => {
@@ -125,8 +123,6 @@ res.json({ result })})})
 router.get('/asupan/bocil', async (req, res, next) => {  
 var apikeyInput = req.query.apikey
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-var apikey = req.query.apikey
-if(!apikey) return res.json(loghandler.apikey)
 fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/bocil.json`))
 .then(response => response.json())
 .then(data => {
@@ -136,8 +132,6 @@ res.json({ result })})})
 router.get('/asupan/ukhty', async (req, res, next) => {  
 var apikeyInput = req.query.apikey
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-var apikey = req.query.apikey
-if(!apikey) return res.json(loghandler.apikey)
 fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/ukhty.json`))
 .then(response => response.json())
 .then(data => {
@@ -147,8 +141,6 @@ res.json({ result })})})
 router.get('/asupan/geayubi', async (req, res, next) => {  
 var apikeyInput = req.query.apikey
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-var apikey = req.query.apikey
-if(!apikey) return res.json(loghandler.apikey)
 fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/geayubi.json`))
 .then(response => response.json())
 .then(data => {
@@ -158,8 +150,6 @@ res.json({ result })})})
 router.get('/asupan/rikagusriani', async (req, res, next) => {  
 var apikeyInput = req.query.apikey
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-var apikey = req.query.apikey
-if(!apikey) return res.json(loghandler.apikey)
 fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/asupan/rikagusriani.json`))
 .then(response => response.json())
 .then(data => {
@@ -167,7 +157,16 @@ var result = data[Math.floor(Math.random() * data.length)];
 res.json({ result })})})
 
 //CECAN
-router.get('/cecan/random', async (req, res, next) => {  
+router.get('/cecan/fun', async (req, res, next) => {  
+var apikeyInput = req.query.apikey
+if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
+fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/cecan.json`))
+.then(response => response.json())
+.then(data => {
+var result = data[Math.floor(Math.random() * data.length)];
+res.json({ result })})})
+
+router.get('/cecan/china', async (req, res, next) => {  
 var apikeyInput = req.query.apikey
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
 fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/cecan.json`))
@@ -627,153 +626,219 @@ fetch(encodeURI(`https://myselfff.herokuapp.com/docs/wallpaper/wallpubg`))
 .then(data => { var result = data;
 res.json({ result })})})
 
+// FUN
+router.get('/fun/jumlahangka', async (req, res, next) => {  
+var apikeyInput = req.query.apikey
+text = req.query.text 
+if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
+if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
+fetch(encodeURI(`https://myselfff.herokuapp.com/docs/fun/jumlahangka?query=${text}`))
+.then(response => response.json())
+.then(data => { var result = data;
+res.json({ result })})})
+
+router.get('/fun/jumlahhuruf', async (req, res, next) => {  
+var apikeyInput = req.query.apikey
+text = req.query.text 
+if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
+if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
+fetch(encodeURI(`https://myselfff.herokuapp.com/docs/fun/jumlahhuruf?query=${text}`))
+.then(response => response.json())
+.then(data => { var result = data;
+res.json({ result })})})
+
+router.get('/fun/besarkecil', async (req, res, next) => {  
+var apikeyInput = req.query.apikey
+text = req.query.text 
+if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
+if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
+fetch(encodeURI(`https://myselfff.herokuapp.com/docs/fun/besarkecil?query=${text}`))
+.then(response => response.json())
+.then(data => { var result = data;
+res.json({ result })})})
+
+router.get('/fun/resepmasakan', async (req, res, next) => {  
+var apikeyInput = req.query.apikey
+text = req.query.text 
+if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
+if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
+fetch(encodeURI(`https://myselfff.herokuapp.com/docs/fun/resepmasakan?query=${text}`))
+.then(response => response.json())
+.then(data => { var result = data;
+res.json({ result })})})
+
+router.get('/fun/katajago', async (req, res, next) => {  
+var apikeyInput = req.query.apikey
+text = req.query.text 
+if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
+if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
+fetch(encodeURI(`https://myselfff.herokuapp.com/docs/fun/katajago?query=${text}`))
+.then(response => response.json())
+.then(data => { var result = data;
+res.json({ result })})})
+
+router.get('/fun/artimimpi', async (req, res, next) => {  
+var apikeyInput = req.query.apikey
+text = req.query.text 
+if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
+if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
+fetch(encodeURI(`https://myselfff.herokuapp.com/docs/fun/artimimpi?query=${text}`))
+.then(response => response.json())
+.then(data => { var result = data;
+res.json({ result })})})
+
+router.get('/fun/artinama', async (req, res, next) => {  
+var apikeyInput = req.query.apikey
+text = req.query.text 
+if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
+if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
+fetch(encodeURI(`https://myselfff.herokuapp.com/docs/fun/artinama?query=${text}`))
+.then(response => response.json())
+.then(data => { var result = data;
+res.json({ result })})})
+
+router.get('/fun/kapital', async (req, res, next) => {  
+var apikeyInput = req.query.apikey
+text = req.query.text 
+if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
+if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
+fetch(encodeURI(`https://myselfff.herokuapp.com/docs/fun/kapital?query=${text}`))
+.then(response => response.json())
+.then(data => { var result = data;
+res.json({ result })})})
+
+router.get('/fun/halah', async (req, res, next) => {  
+var apikeyInput = req.query.apikey
+text = req.query.text 
+if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
+if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
+fetch(encodeURI(`https://myselfff.herokuapp.com/docs/fun/halah?query=${text}`))
+.then(response => response.json())
+.then(data => { var result = data;
+res.json({ result })})})
+
+router.get('/fun/huluh', async (req, res, next) => {  
+var apikeyInput = req.query.apikey
+text = req.query.text 
+if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
+if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
+fetch(encodeURI(`https://myselfff.herokuapp.com/docs/fun/huluh?query=${text}`))
+.then(response => response.json())
+.then(data => { var result = data;
+res.json({ result })})})
+
+router.get('/fun/heleh', async (req, res, next) => {  
+var apikeyInput = req.query.apikey
+text = req.query.text 
+if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
+if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
+fetch(encodeURI(`https://myselfff.herokuapp.com/docs/fun/heleh?query=${text}`))
+.then(response => response.json())
+.then(data => { var result = data;
+res.json({ result })})})
+
+router.get('/fun/bilangangka', async (req, res, next) => {  
+var apikeyInput = req.query.apikey
+text = req.query.text 
+if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
+if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
+fetch(encodeURI(`https://myselfff.herokuapp.com/docs/fun/bilangangka?query=${text}`))
+.then(response => response.json())
+.then(data => { var result = data;
+res.json({ result })})})
+
+router.get('/fun/balikangka', async (req, res, next) => {  
+var apikeyInput = req.query.apikey
+text = req.query.text 
+if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
+if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
+fetch(encodeURI(`https://myselfff.herokuapp.com/docs/fun/balikangka?query=${text}`))
+.then(response => response.json())
+.then(data => { var result = data;
+res.json({ result })})})
+
+router.get('/fun/balikhuruf', async (req, res, next) => {  
+var apikeyInput = req.query.apikey
+text = req.query.text 
+if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
+if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
+fetch(encodeURI(`https://myselfff.herokuapp.com/docs/fun/balikhuruf?query=${text}`))
+.then(response => response.json())
+.then(data => { var result = data;
+res.json({ result })})})
+
+router.get('/fun/wikipedia', async (req, res, next) => {  
+var apikeyInput = req.query.apikey
+text = req.query.text 
+if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
+if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
+fetch(encodeURI(`https://myselfff.herokuapp.com/docs/fun/wikipedia?query=${text}`))
+.then(response => response.json())
+.then(data => { var result = data;
+res.json({ result })})})
+
 // RANDOM
-router.get('/random/jumlahangka', async (req, res, next) => {  
+router.get('/random/meme', async (req, res, next) => {  
 var apikeyInput = req.query.apikey
-text = req.query.text 
-if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-fetch(encodeURI(`https://myselfff.herokuapp.com/docs/random/jumlahangka?query=${text}`))
+fetch(encodeURI(`https://api-yogipw.herokuapp.com/api/random/meme`))
 .then(response => response.json())
 .then(data => { var result = data;
 res.json({ result })})})
 
-router.get('/random/jumlahhuruf', async (req, res, next) => {  
+// NSFW
+router.get('/nsfw/ass', async (req, res, next) => {  
 var apikeyInput = req.query.apikey
-text = req.query.text 
-if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-fetch(encodeURI(`https://myselfff.herokuapp.com/docs/random/jumlahhuruf?query=${text}`))
+fetch(encodeURI(`https://api-yogipw.herokuapp.com/api/nsfw/ass`))
 .then(response => response.json())
 .then(data => { var result = data;
 res.json({ result })})})
 
-router.get('/random/besarkecil', async (req, res, next) => {  
+router.get('/nsfw/ahegao', async (req, res, next) => {  
 var apikeyInput = req.query.apikey
-text = req.query.text 
-if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-fetch(encodeURI(`https://myselfff.herokuapp.com/docs/random/besarkecil?query=${text}`))
+fetch(encodeURI(`https://api-yogipw.herokuapp.com/api/nsfw/ahegao`))
 .then(response => response.json())
 .then(data => { var result = data;
 res.json({ result })})})
 
-router.get('/random/resepmasakan', async (req, res, next) => {  
+router.get('/nsfw/bdsm', async (req, res, next) => {  
 var apikeyInput = req.query.apikey
-text = req.query.text 
-if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-fetch(encodeURI(`https://myselfff.herokuapp.com/docs/random/resepmasakan?query=${text}`))
+fetch(encodeURI(`https://api-yogipw.herokuapp.com/api/nsfw/bdsm`))
 .then(response => response.json())
 .then(data => { var result = data;
 res.json({ result })})})
 
-router.get('/random/katajago', async (req, res, next) => {  
+router.get('/nsfw/blowjob', async (req, res, next) => {  
 var apikeyInput = req.query.apikey
-text = req.query.text 
-if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-fetch(encodeURI(`https://myselfff.herokuapp.com/docs/random/katajago?query=${text}`))
+fetch(encodeURI(`https://api-yogipw.herokuapp.com/api/nsfw/blowjob`))
 .then(response => response.json())
 .then(data => { var result = data;
 res.json({ result })})})
 
-router.get('/random/artimimpi', async (req, res, next) => {  
+router.get('/nsfw/cukold', async (req, res, next) => {  
 var apikeyInput = req.query.apikey
-text = req.query.text 
-if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-fetch(encodeURI(`https://myselfff.herokuapp.com/docs/random/artimimpi?query=${text}`))
+fetch(encodeURI(`https://api-yogipw.herokuapp.com/api/nsfw/cukold`))
 .then(response => response.json())
 .then(data => { var result = data;
 res.json({ result })})})
 
-router.get('/random/artinama', async (req, res, next) => {  
+router.get('/nsfw/cum', async (req, res, next) => {  
 var apikeyInput = req.query.apikey
-text = req.query.text 
-if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-fetch(encodeURI(`https://myselfff.herokuapp.com/docs/random/artinama?query=${text}`))
+fetch(encodeURI(`https://api-yogipw.herokuapp.com/api/nsfw/cum`))
 .then(response => response.json())
 .then(data => { var result = data;
 res.json({ result })})})
 
-router.get('/random/kapital', async (req, res, next) => {  
+router.get('/nsfw/ero', async (req, res, next) => {  
 var apikeyInput = req.query.apikey
-text = req.query.text 
-if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-fetch(encodeURI(`https://myselfff.herokuapp.com/docs/random/kapital?query=${text}`))
-.then(response => response.json())
-.then(data => { var result = data;
-res.json({ result })})})
-
-router.get('/random/halah', async (req, res, next) => {  
-var apikeyInput = req.query.apikey
-text = req.query.text 
-if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
-if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-fetch(encodeURI(`https://myselfff.herokuapp.com/docs/random/halah?query=${text}`))
-.then(response => response.json())
-.then(data => { var result = data;
-res.json({ result })})})
-
-router.get('/random/huluh', async (req, res, next) => {  
-var apikeyInput = req.query.apikey
-text = req.query.text 
-if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
-if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-fetch(encodeURI(`https://myselfff.herokuapp.com/docs/random/huluh?query=${text}`))
-.then(response => response.json())
-.then(data => { var result = data;
-res.json({ result })})})
-
-router.get('/random/heleh', async (req, res, next) => {  
-var apikeyInput = req.query.apikey
-text = req.query.text 
-if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
-if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-fetch(encodeURI(`https://myselfff.herokuapp.com/docs/random/heleh?query=${text}`))
-.then(response => response.json())
-.then(data => { var result = data;
-res.json({ result })})})
-
-router.get('/random/bilangangka', async (req, res, next) => {  
-var apikeyInput = req.query.apikey
-text = req.query.text 
-if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
-if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-fetch(encodeURI(`https://myselfff.herokuapp.com/docs/random/bilangangka?query=${text}`))
-.then(response => response.json())
-.then(data => { var result = data;
-res.json({ result })})})
-
-router.get('/random/balikangka', async (req, res, next) => {  
-var apikeyInput = req.query.apikey
-text = req.query.text 
-if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
-if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-fetch(encodeURI(`https://myselfff.herokuapp.com/docs/random/balikangka?query=${text}`))
-.then(response => response.json())
-.then(data => { var result = data;
-res.json({ result })})})
-
-router.get('/random/balikhuruf', async (req, res, next) => {  
-var apikeyInput = req.query.apikey
-text = req.query.text 
-if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
-if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-fetch(encodeURI(`https://myselfff.herokuapp.com/docs/random/balikhuruf?query=${text}`))
-.then(response => response.json())
-.then(data => { var result = data;
-res.json({ result })})})
-
-router.get('/random/wikipedia', async (req, res, next) => {  
-var apikeyInput = req.query.apikey
-text = req.query.text 
-if (!text) return res.json({message: 'MASUKKAN TEXT' }) 
-if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-fetch(encodeURI(`https://myselfff.herokuapp.com/docs/random/wikipedia?query=${text}`))
+fetch(encodeURI(`https://api-yogipw.herokuapp.com/api/nsfw/ero`))
 .then(response => response.json())
 .then(data => { var result = data;
 res.json({ result })})})
@@ -912,6 +977,14 @@ res.set('Content-Type', 'image/png');
 res.send(body)})})
 
 //SEARCH
+router.get('/search/youtube', async (req, res, next) => {  
+var apikeyInput = req.query.apikey
+if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
+fetch(encodeURI(`https://myselfff.herokuapp.com/docs/search/ytsearch?query=${query}`))
+.then(response => response.json())
+.then(data => { var result = data;
+res.json({ result })})})
+
 router.get('/search/pinterest', async (req, res, next) => {  
 var apikeyInput = req.query.apikey
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
@@ -920,10 +993,26 @@ fetch(encodeURI(`https://myselfff.herokuapp.com/docs/search/pinterest?query=${qu
 .then(data => { var result = data;
 res.json({ result })})})
 
-router.get('/search/ytsearch', async (req, res, next) => {  
+router.get('/search/gsmarena', async (req, res, next) => {  
 var apikeyInput = req.query.apikey
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-fetch(encodeURI(`https://myselfff.herokuapp.com/docs/search/ytsearch?query=${query}`))
+fetch(encodeURI(`https://api-yogipw.herokuapp.com/api/search/gsmarena?query=${query}`))
+.then(response => response.json())
+.then(data => { var result = data;
+res.json({ result })})})
+
+router.get('/search/playstore', async (req, res, next) => {  
+var apikeyInput = req.query.apikey
+if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
+fetch(encodeURI(`https://api-yogipw.herokuapp.com/api/search/gplaystore?query=${query}`))
+.then(response => response.json())
+.then(data => { var result = data;
+res.json({ result })})})
+
+router.get('/search/appstore', async (req, res, next) => {  
+var apikeyInput = req.query.apikey
+if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
+fetch(encodeURI(`https://api-yogipw.herokuapp.com/api/search/appstore?query=${query}`))
 .then(response => response.json())
 .then(data => { var result = data;
 res.json({ result })})})
@@ -939,7 +1028,7 @@ res.json({ result })})})
 router.get('/search/shopee', async (req, res, next) => {  
 var apikeyInput = req.query.apikey
 if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-fetch(encodeURI(`https://myselfff.herokuapp.com/docs/search/shopee?query=${query}`))
+fetch(encodeURI(`https://api-yogipw.herokuapp.com/api/search/shopee?query=${query}`))
 .then(response => response.json())
 .then(data => { var result = data;
 res.json({ result })})})
