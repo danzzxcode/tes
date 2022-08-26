@@ -14,6 +14,9 @@ var request = require('request');
 var router  = express.Router();
 nottext: {message: 'MASUKKAN TEXT' }
 notapikey: {message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' }
+} catch (e) {
+	console.log('WELCOME TO MY REST API')
+}
 
 loghandler = {
     error: {
@@ -141,8 +144,8 @@ router.get('/asupan/ukhty', async (req, res, next) => {
         var result = data[Math.floor(Math.random() * data.length)];
         var buffer = result.url;
           data = await fetch(buffer).then(v => v.buffer())
-         await fs.writeFileSync(__path +'/tmp/chika.mp4', data)
-        res.sendFile(__path+'/tmp/chika.mp4')
+         await fs.writeFileSync(__path +'/chika.mp4', data)
+        res.sendFile(__path+'/chika.mp4')
          })
          .catch(e => {
          	console.log(e);
@@ -162,8 +165,8 @@ router.get('/asupan/bocil', async (req, res, next) => {
         var result = data[Math.floor(Math.random() * data.length)];
         var buffer = result.url;
           data = await fetch(buffer).then(v => v.buffer())
-         await fs.writeFileSync(__path +'/tmp/chika.mp4', data)
-        res.sendFile(__path+'/tmp/chika.mp4')
+         await fs.writeFileSync(__path +'/chika.mp4', data)
+        res.sendFile(__path+'/chika.mp4')
          })
          .catch(e => {
          	console.log(e);
@@ -173,7 +176,7 @@ router.get('/asupan/bocil', async (req, res, next) => {
   res.json(loghandler.apikey)
 }
 })
-router.get('/asupan/gheayubi', async (req, res, next) => {
+router.get('/asupan/geayubi', async (req, res, next) => {
           var apikey = req.query.apikey
        	if(!apikey) return res.json(loghandler.apikey)
         if(listkey.includes(apikey)){
@@ -183,8 +186,8 @@ router.get('/asupan/gheayubi', async (req, res, next) => {
         var result = data[Math.floor(Math.random() * data.length)];
         var buffer = result.url;
           data = await fetch(buffer).then(v => v.buffer())
-         await fs.writeFileSync(__path +'/tmp/chika.mp4', data)
-        res.sendFile(__path+'/tmp/chika.mp4')
+         await fs.writeFileSync(__path +'/chika.mp4', data)
+        res.sendFile(__path+'/chika.mp4')
          })
          .catch(e => {
          	console.log(e);
@@ -204,8 +207,8 @@ router.get('/asupan/rikagusriani', async (req, res, next) => {
         var result = data[Math.floor(Math.random() * data.length)];
         var buffer = result.url;
           data = await fetch(buffer).then(v => v.buffer())
-         await fs.writeFileSync(__path +'/tmp/chika.mp4', data)
-        res.sendFile(__path+'/tmp/chika.mp4')
+         await fs.writeFileSync(__path +'/chika.mp4', data)
+        res.sendFile(__path+'/chika.mp4')
          })
          .catch(e => {
          	console.log(e);
