@@ -15,6 +15,7 @@ var router  = express.Router();
 nottext: {message: 'MASUKKAN TEXT' }
 notapikey: {message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' }
 
+
 loghandler = {
     error: {
         status: false,
@@ -162,60 +163,6 @@ if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya a
 fetch(encodeURI(`https://raw.githubusercontent.com/binjaicity/warga62/master/cecan.json`))
 .then(response => response.json())
 .then(data => {
-var result = data[Math.floor(Math.random() * data.length)];
-res.json({ result })})})
-
-router.get('/cecan/indonesia', async (req, res, next) => {  
-var apikeyInput = req.query.apikey
-if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-fetch(encodeURI(`https://api-alphabot.herokuapp.com/api/cecan/indonesia`))
-.then(response => response.json())
-.then(data => {
-var result = data[Math.floor(Math.random() * data.length)];
-res.json({ result })})})
-
-router.get('/cecan/jepang', async (req, res, next) => {  
-var apikeyInput = req.query.apikey
-if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-fetch(encodeURI(`https://api-alphabot.herokuapp.com/api/cecan/japan`))
-.then(response => response.json())
-.then(data => {
-var result = data[Math.floor(Math.random() * data.length)];
-res.json({ result })})})
-
-router.get('/cecan/korea', async (req, res, next) => {  
-var apikeyInput = req.query.apikey
-if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-fetch(encodeURI(`https://api-alphabot.herokuapp.com/api/cecan/korea`))
-.then(response => response.json())
-.then(data => { {
-var result = data[Math.floor(Math.random() * data.length)];
-res.json({ result })})})
-
-router.get('/cecan/vietnam', async (req, res, next) => {  
-var apikeyInput = req.query.apikey
-if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-fetch(encodeURI(`https://api-alphabot.herokuapp.com/api/cecan/vietnam`))
-.then(response => response.json())
-.then(data => { {
-var result = data[Math.floor(Math.random() * data.length)];
-res.json({ result })})})
-
-router.get('/cecan/thailand', async (req, res, next) => {  
-var apikeyInput = req.query.apikey
-if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-fetch(encodeURI(`https://api-alphabot.herokuapp.com/api/cecan/thailand`))
-.then(response => response.json())
-.then(data => { {
-var result = data[Math.floor(Math.random() * data.length)];
-res.json({ result })})})
-
-router.get('/cecan/china', async (req, res, next) => {  
-var apikeyInput = req.query.apikey
-if(apikeyInput != apikey) return res.json({message: 'apikey invalid, gak punya apikey? chat gw aja yaaa di wa.me/6288296339947' })
-fetch(encodeURI(`https://api-alphabot.herokuapp.com/api/cecan/china`))
-.then(response => response.json())
-.then(data => { {
 var result = data[Math.floor(Math.random() * data.length)];
 res.json({ result })})})
 
